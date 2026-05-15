@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="circleGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <linearGradient id="chromeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c0c0c0"/>
+      <stop offset="25%" stop-color="#e8e8e8"/>
+      <stop offset="50%" stop-color="#a8a8a8"/>
+      <stop offset="75%" stop-color="#d4d4d4"/>
+      <stop offset="100%" stop-color="#b8b8b8"/>
+    </linearGradient>
+    <linearGradient id="chromeText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c0c0c0"/>
+      <stop offset="20%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#a8a8a8"/>
+      <stop offset="60%" stop-color="#e8e8e8"/>
+      <stop offset="80%" stop-color="#909090"/>
+      <stop offset="100%" stop-color="#d4d4d4"/>
+    </linearGradient>
+  </defs>
+  <!-- Chrome border ring -->
+  <circle cx="50" cy="50" r="48" fill="url(#chromeBorder)"/>
+  <!-- Main dark circle -->
+  <circle cx="50" cy="50" r="44" fill="url(#circleGrad)"/>
+  <!-- BTD Text -->
+  <text x="50" y="52" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="22" fill="url(#chromeText)" letter-spacing="1">BTD</text>
+  <!-- Garage door lines at bottom -->
+  <g stroke="url(#chromeText)" stroke-width="1.5" opacity="0.7">
+    <line x1="22" y1="64" x2="78" y2="64"/>
+    <line x1="22" y1="69" x2="78" y2="69"/>
+    <line x1="22" y1="74" x2="78" y2="74"/>
+    <!-- Vertical dividers -->
+    <line x1="37" y1="64" x2="37" y2="74"/>
+    <line x1="50" y1="64" x2="50" y2="74"/>
+    <line x1="63" y1="64" x2="63" y2="74"/>
+  </g>
+</svg>

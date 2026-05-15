@@ -1,0 +1,411 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SubscribeSection from '../components/SubscribeSection.astro';
+---
+
+<Layout
+  title="About — Behind the Door Podcast"
+  description="Behind the Door is the podcast for the trades. Meet your host Kaleb Blyton and learn about the show's mission."
+>
+  <!-- Hero -->
+  <section class="about-hero noise-overlay">
+    <div class="container">
+      <span class="eyebrow">The Show</span>
+      <h1 class="page-title chrome-text">Built for the People<br />Who Build Everything Else.</h1>
+      <p class="page-sub">
+        A Podcast for the Trades — real conversations with home service business owners,
+        world-class technicians, and the people who built something real.
+      </p>
+    </div>
+  </section>
+
+  <!-- Host section -->
+  <section class="host-section">
+    <div class="container">
+      <div class="host-grid">
+        <div class="host-visual">
+          <div class="host-photo-frame">
+            <div class="host-initials">KB</div>
+          </div>
+          <div class="host-badge">
+            <span class="badge-label">Host</span>
+            <span class="badge-name chrome-text">Kaleb Blyton</span>
+          </div>
+        </div>
+        <div class="host-bio">
+          <span class="section-eyebrow">Meet Your Host</span>
+          <h2 class="host-title chrome-text">Kaleb Blyton</h2>
+          <div class="bio-text">
+            <p>
+              Kaleb Blyton knows the trades. Not from a distance — from the inside. He's spent
+              years in and around home services, talking to the people who wake up before sunrise,
+              load the truck, and make things work when everyone else is still asleep.
+            </p>
+            <p>
+              Behind the Door was born out of one simple observation: the best conversations happen
+              after the cameras turn off. The technician who cracked the code on their routing.
+              The owner who almost lost everything and rebuilt. The person who was told the trades
+              weren't good enough — and went on to build something nobody can ignore.
+            </p>
+            <p>
+              This show exists for all of them. No corporate-speak. No highlight reels. Just the
+              truth, told by the people living it.
+            </p>
+          </div>
+          <div class="host-ctas">
+            <a href="/contact" class="btn-chrome">Be a Guest</a>
+            <a href="/episodes" class="btn-outline">Listen to Episodes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-header">
+          <span class="section-eyebrow">Our Mission</span>
+          <h2 class="mission-title chrome-text">No Fluff. No Corporate BS.<br />Just the Truth.</h2>
+        </div>
+        <div class="mission-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>For the Grinders</h3>
+            <p>For the technician clocking 60-hour weeks, building skills on the job, figuring it out one service call at a time.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3>For the Builders</h3>
+            <p>For the business owner figuring it out alone — hiring, marketing, managing, selling — without a playbook.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>For the Overlooked</h3>
+            <p>For everyone who was told the trades weren't good enough — and went on to build something the world depends on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section noise-overlay">
+    <div class="container">
+      <h2 class="stats-title">The Show at a Glance</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number chrome-text">100%</div>
+          <div class="stat-label">Real Stories</div>
+          <div class="stat-desc">No actors, no scripts — just honest conversations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number chrome-text">0</div>
+          <div class="stat-label">Corporate BS</div>
+          <div class="stat-desc">We cut through the noise and get to what actually matters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number chrome-text">1</div>
+          <div class="stat-label">Mission</div>
+          <div class="stat-desc">Honor the people who keep homes and businesses running</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number chrome-text">&infin;</div>
+          <div class="stat-label">Stories to Tell</div>
+          <div class="stat-desc">Every trade, every market, every journey worth hearing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SubscribeSection />
+</Layout>
+
+<style>
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .about-hero {
+    background: linear-gradient(160deg, #16181a, #1e2022);
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 1px solid #2e3032;
+  }
+
+  .eyebrow, .section-eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6a6e72;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+
+  .chrome-text {
+    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-sub {
+    color: #6a6e72;
+    font-size: 1rem;
+    max-width: 560px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Host section */
+  .host-section {
+    padding: 5rem 1.5rem;
+    background: #1a1c1e;
+  }
+
+  .host-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .host-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .host-photo-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #c0c0c0 0%, #909090 50%, #d4d4d4 100%);
+    padding: 3px;
+    flex-shrink: 0;
+  }
+
+  .host-initials {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1e2022, #2a2c2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #3a3e42;
+    letter-spacing: -0.05em;
+  }
+
+  .host-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #5a5e62;
+  }
+
+  .badge-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .host-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 900;
+    margin: 0 0 1.5rem;
+  }
+
+  .bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .bio-text p {
+    color: #6a6e72;
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+
+  .host-ctas {
+    display: flex;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-chrome {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    color: #1a1c1e;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+
+  .btn-chrome:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #5a5e62;
+    color: #c0c0c0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: #c0c0c0; color: #e8e8e8; }
+
+  /* Mission section */
+  .mission-section {
+    background: #16181a;
+    padding: 5rem 1.5rem;
+    border-top: 1px solid #2e3032;
+    border-bottom: 1px solid #2e3032;
+  }
+
+  .mission-content { display: flex; flex-direction: column; gap: 3rem; }
+
+  .mission-header { text-align: center; }
+
+  .mission-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .mission-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .pillar {
+    background: #1e2022;
+    border: 1px solid #2e3032;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .pillar-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(192,192,192,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a4a8;
+  }
+
+  .pillar h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #d4d4d4;
+  }
+
+  .pillar p {
+    color: #6a6e72;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Stats */
+  .stats-section {
+    background: linear-gradient(160deg, #1e2022, #16181a);
+    padding: 5rem 1.5rem;
+  }
+
+  .stats-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #8a8e92;
+    text-align: center;
+    margin: 0 0 3rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: #1a1c1e;
+    border: 1px solid #2e3032;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #c0c0c0;
+  }
+
+  .stat-desc {
+    font-size: 0.8rem;
+    color: #5a5e62;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .host-grid { grid-template-columns: 1fr; }
+    .host-visual { align-items: flex-start; flex-direction: row; gap: 2rem; }
+    .host-photo-frame { width: 140px; height: 140px; }
+    .mission-pillars { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .host-visual { flex-direction: column; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

@@ -1,0 +1,455 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import SubscribeSection from '../components/SubscribeSection.astro';
+import { fetchEpisodes, formatDate, formatDuration } from '../lib/rss';
+
+const episodes = await fetchEpisodes();
+const latestEpisode = episodes[0] ?? null;
+const recentEpisodes = episodes.slice(1, 4);
+---
+
+<Layout>
+  <HeroSection />
+
+  <!-- Latest Episode -->
+  <section class="latest-section section-pad">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title chrome-text">Latest Episode</h2>
+        <div class="chrome-underline"></div>
+      </div>
+
+      {latestEpisode ? (
+        <div class="latest-card">
+          <div class="latest-thumb">
+            {latestEpisode.image ? (
+              <img src={latestEpisode.image} alt={latestEpisode.title} loading="lazy" width="400" height="400" />
+            ) : (
+              <div class="thumb-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
+                  <defs>
+                    <linearGradient id="ltChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#c0c0c0"/>
+                      <stop offset="50%" stop-color="#e8e8e8"/>
+                      <stop offset="100%" stop-color="#909090"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="48" fill="url(#ltChrome)"/>
+                  <circle cx="50" cy="50" r="44" fill="#111"/>
+                  <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+                        font-family="Arial Black" font-weight="900" font-size="22"
+                        fill="url(#ltChrome)" letter-spacing="1">BTD</text>
+                </svg>
+              </div>
+            )}
+          </div>
+          <div class="latest-info">
+            <div class="ep-meta">
+              {latestEpisode.episodeNumber && <span class="ep-badge">Episode {latestEpisode.episodeNumber}</span>}
+              {latestEpisode.pubDate && <span class="ep-date">{formatDate(latestEpisode.pubDate)}</span>}
+              {latestEpisode.duration && <span class="ep-dur">{formatDuration(latestEpisode.duration)}</span>}
+            </div>
+            <h3 class="latest-title chrome-text">{latestEpisode.title}</h3>
+            <p class="latest-desc">
+              {latestEpisode.description.slice(0, 280)}{latestEpisode.description.length > 280 ? '…' : ''}
+            </p>
+            <div class="latest-actions">
+              <a href={`/episodes/${latestEpisode.slug}`} class="btn-chrome">Listen Now</a>
+              <a href={`/episodes/${latestEpisode.slug}`} class="btn-outline">Show Notes</a>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="latest-placeholder">
+          <div class="placeholder-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+              <defs>
+                <linearGradient id="phLatestChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#c0c0c0"/>
+                  <stop offset="50%" stop-color="#e8e8e8"/>
+                  <stop offset="100%" stop-color="#909090"/>
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="48" fill="url(#phLatestChrome)"/>
+              <circle cx="50" cy="50" r="44" fill="#111"/>
+              <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+                    font-family="Arial Black" font-weight="900" font-size="22"
+                    fill="url(#phLatestChrome)" letter-spacing="1">BTD</text>
+            </svg>
+          </div>
+          <div>
+            <span class="ep-badge">Coming Soon</span>
+            <h3 class="latest-title chrome-text">Episode Coming Soon</h3>
+            <p class="latest-desc">
+              The first episode of Behind the Door is on its way. Subscribe now so you're
+              the first to know when it drops. Real conversations, real people, real trades.
+            </p>
+            <a href="/subscribe" class="btn-chrome">Subscribe & Be First</a>
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Recent Episodes Grid -->
+  {(recentEpisodes.length > 0 || episodes.length === 0) && (
+    <section class="recent-section section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title chrome-text">Recent Episodes</h2>
+          <div class="chrome-underline"></div>
+          <a href="/episodes" class="view-all">View All Episodes &rarr;</a>
+        </div>
+
+        <div class="episodes-grid">
+          {recentEpisodes.length > 0 ? (
+            recentEpisodes.map((ep, i) => (
+              <EpisodeCard episode={ep} index={i} />
+            ))
+          ) : (
+            <>
+              <EpisodeCard placeholder index={0} />
+              <EpisodeCard placeholder index={1} />
+              <EpisodeCard placeholder index={2} />
+            </>
+          )}
+        </div>
+
+        <div class="grid-footer">
+          <a href="/episodes" class="btn-outline">Browse All Episodes</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Mission Strip -->
+  <section class="mission-section noise-overlay">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-left">
+          <blockquote class="pull-quote chrome-text">
+            "Built for the people<br /> who build everything else."
+          </blockquote>
+          <div class="host-sig">
+            <div class="host-avatar">KB</div>
+            <div>
+              <div class="host-name">Kaleb Blyton</div>
+              <div class="host-role">Host, Behind the Door</div>
+            </div>
+          </div>
+        </div>
+        <div class="mission-right">
+          <h3 class="mission-title">Why This Podcast Exists</h3>
+          <p>
+            The best conversations happen behind closed doors. Behind the Door is the
+            podcast for the technician grinding right now, the business owner figuring
+            it out alone, and everyone who was told the trades weren't good enough.
+          </p>
+          <p>
+            Host Kaleb Blyton sits down with home service business owners, world-class
+            technicians, and people who built something real. No fluff. No corporate BS.
+            Just the truth — the stories they never put on the highlight reel.
+          </p>
+          <div class="mission-actions">
+            <a href="/about" class="btn-outline">Meet Your Host</a>
+            <a href="/contact" class="btn-ghost">Be a Guest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SubscribeSection />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-pad { padding: 5rem 1.5rem; }
+
+  /* Section headers */
+  .section-header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .chrome-underline {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #5a5e62, transparent);
+    min-width: 40px;
+  }
+
+  .view-all {
+    color: #8a8e92;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .view-all:hover { color: #c0c0c0; }
+
+  /* Latest section */
+  .latest-section { background: #1a1c1e; }
+
+  .latest-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    background: #242628;
+    border: 1px solid #3a3c3e;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .latest-thumb {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .latest-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e2022, #2a2c2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+  }
+
+  .latest-info {
+    padding: 2.5rem 2.5rem 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .ep-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .ep-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a8a8a8;
+    background: rgba(168,168,168,0.1);
+    padding: 0.25em 0.75em;
+    border-radius: 4px;
+  }
+
+  .ep-date, .ep-dur {
+    font-size: 0.8rem;
+    color: #5a5e62;
+  }
+
+  .latest-title {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .latest-desc {
+    color: #6a6e72;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .latest-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Placeholder latest */
+  .latest-placeholder {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: #1e2022;
+    border: 2px dashed #2e3032;
+    border-radius: 16px;
+    padding: 3rem;
+  }
+
+  .placeholder-icon { opacity: 0.5; }
+
+  /* Buttons */
+  .btn-chrome {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    color: #1a1c1e;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+
+  .btn-chrome:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #5a5e62;
+    color: #c0c0c0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: #c0c0c0; color: #e8e8e8; }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #6a6e72;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: #c0c0c0; }
+
+  /* Episodes grid */
+  .recent-section { background: #16181a; }
+
+  .episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .grid-footer {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  /* Mission section */
+  .mission-section {
+    background: linear-gradient(160deg, #1e2022, #16181a);
+    padding: 6rem 1.5rem;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pull-quote {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0 0 2rem;
+    font-style: normal;
+  }
+
+  .host-sig {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .host-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #c0c0c0, #707070);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: #1a1c1e;
+    flex-shrink: 0;
+  }
+
+  .host-name {
+    font-weight: 700;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+  }
+
+  .host-role {
+    color: #5a5e62;
+    font-size: 0.8rem;
+  }
+
+  .mission-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mission-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #e8e8e8;
+  }
+
+  .mission-right p {
+    color: #6a6e72;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .mission-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .latest-card { grid-template-columns: 1fr; }
+    .latest-thumb { aspect-ratio: 16/9; }
+    .latest-info { padding: 1.75rem; }
+    .mission-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .episodes-grid { grid-template-columns: 1fr 1fr; }
+    .latest-placeholder { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .episodes-grid { grid-template-columns: 1fr; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .chrome-underline { display: none; }
+  }
+</style>

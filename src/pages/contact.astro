@@ -1,0 +1,406 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact — Behind the Door Podcast"
+  description="Apply to be a guest on Behind the Door, or inquire about sponsorship opportunities."
+>
+  <section class="contact-hero noise-overlay">
+    <div class="container">
+      <span class="eyebrow">Get In Touch</span>
+      <h1 class="page-title chrome-text">Let's Talk.</h1>
+      <p class="page-sub">
+        Whether you want to share your story on the show or partner with us through a sponsorship,
+        we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="forms-grid">
+        <!-- Guest Application -->
+        <div class="form-panel">
+          <div class="form-panel-header">
+            <div class="form-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="form-title chrome-text">Guest Application</h2>
+              <p class="form-sub">Think your story belongs on Behind the Door? Tell us about it.</p>
+            </div>
+          </div>
+
+          <form class="contact-form" name="guest-application" method="POST" netlify>
+            <input type="hidden" name="form-name" value="guest-application" />
+
+            <div class="field-row">
+              <div class="field">
+                <label for="guest-name">Full Name *</label>
+                <input type="text" id="guest-name" name="name" required placeholder="John Smith" />
+              </div>
+              <div class="field">
+                <label for="guest-email">Email Address *</label>
+                <input type="email" id="guest-email" name="email" required placeholder="john@example.com" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="guest-business">Business Name</label>
+              <input type="text" id="guest-business" name="business" placeholder="Smith HVAC Solutions" />
+            </div>
+
+            <div class="field">
+              <label for="guest-trade">Trade / Industry *</label>
+              <select id="guest-trade" name="trade" required>
+                <option value="" disabled selected>Select your trade</option>
+                <option value="hvac">HVAC</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="electrical">Electrical</option>
+                <option value="roofing">Roofing</option>
+                <option value="pest-control">Pest Control</option>
+                <option value="garage-doors">Garage Doors</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="painting">Painting</option>
+                <option value="flooring">Flooring</option>
+                <option value="other">Other Home Services</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="guest-instagram">Instagram Handle</label>
+                <input type="text" id="guest-instagram" name="instagram" placeholder="@yourhandle" />
+              </div>
+              <div class="field">
+                <label for="guest-tiktok">TikTok Handle</label>
+                <input type="text" id="guest-tiktok" name="tiktok" placeholder="@yourhandle" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="guest-story">Tell Us Your Story *</label>
+              <textarea id="guest-story" name="story" required rows="5"
+                placeholder="What would you want to talk about on the show? What have you been through that others in the trades need to hear?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Application</button>
+          </form>
+        </div>
+
+        <!-- Sponsorship Inquiry -->
+        <div class="form-panel">
+          <div class="form-panel-header">
+            <div class="form-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="form-title chrome-text">Sponsorship Inquiry</h2>
+              <p class="form-sub">Reach the trades audience that actually makes buying decisions.</p>
+            </div>
+          </div>
+
+          <form class="contact-form" name="sponsorship" method="POST" netlify>
+            <input type="hidden" name="form-name" value="sponsorship" />
+
+            <div class="field-row">
+              <div class="field">
+                <label for="sp-name">Your Name *</label>
+                <input type="text" id="sp-name" name="name" required placeholder="Jane Doe" />
+              </div>
+              <div class="field">
+                <label for="sp-company">Company *</label>
+                <input type="text" id="sp-company" name="company" required placeholder="Your Company" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="sp-email">Email Address *</label>
+                <input type="email" id="sp-email" name="email" required placeholder="jane@company.com" />
+              </div>
+              <div class="field">
+                <label for="sp-website">Website</label>
+                <input type="url" id="sp-website" name="website" placeholder="https://yourcompany.com" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="sp-budget">Monthly Budget Range</label>
+              <select id="sp-budget" name="budget">
+                <option value="" disabled selected>Select budget range</option>
+                <option value="under-1k">Under $1,000/mo</option>
+                <option value="1k-3k">$1,000 – $3,000/mo</option>
+                <option value="3k-5k">$3,000 – $5,000/mo</option>
+                <option value="5k-10k">$5,000 – $10,000/mo</option>
+                <option value="10k+">$10,000+/mo</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="sp-message">Tell Us About Your Goals *</label>
+              <textarea id="sp-message" name="message" required rows="5"
+                placeholder="What are you trying to accomplish? Who are you trying to reach? What's your product or service?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alternative contact -->
+  <section class="alt-contact">
+    <div class="container">
+      <div class="alt-grid">
+        <div class="alt-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <div class="alt-label">Email</div>
+            <div class="alt-val">hello@btdpodcast.net</div>
+          </div>
+        </div>
+        <div class="alt-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div>
+            <div class="alt-label">Instagram</div>
+            <a href="https://instagram.com/behindthedoorpod" target="_blank" rel="noopener" class="alt-val alt-link">@behindthedoorpod</a>
+          </div>
+        </div>
+        <div class="alt-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.84 1.56V6.81a4.85 4.85 0 0 1-1.07-.12z"/></svg>
+          <div>
+            <div class="alt-label">TikTok</div>
+            <a href="https://tiktok.com/@behindthedoorpod" target="_blank" rel="noopener" class="alt-val alt-link">@behindthedoorpod</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .contact-hero {
+    background: linear-gradient(160deg, #16181a, #1e2022);
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 1px solid #2e3032;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6a6e72;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin: 0 0 1rem;
+  }
+
+  .chrome-text {
+    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-sub {
+    color: #6a6e72;
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .contact-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .forms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-panel {
+    background: #1e2022;
+    border: 1px solid #2e3032;
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-panel-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .form-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(192,192,192,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8e92;
+    flex-shrink: 0;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin: 0 0 0.375rem;
+  }
+
+  .form-sub {
+    color: #6a6e72;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #8a8e92;
+    letter-spacing: 0.03em;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    background: #16181a;
+    border: 1px solid #3a3c3e;
+    border-radius: 8px;
+    color: #e0e2e4;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder { color: #3a3e42; }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus { border-color: #8a8e92; }
+
+  .field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236a6e72' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .field select option { background: #1e2022; color: #e0e2e4; }
+
+  .field textarea { resize: vertical; min-height: 120px; }
+
+  .btn-submit {
+    padding: 0.875rem;
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    color: #1a1c1e;
+    font-weight: 800;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s, transform 0.15s;
+    margin-top: 0.25rem;
+  }
+
+  .btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* Alt contact */
+  .alt-contact {
+    background: #16181a;
+    border-top: 1px solid #2e3032;
+    padding: 3rem 1.5rem;
+  }
+
+  .alt-grid {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .alt-item {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    color: #5a5e62;
+  }
+
+  .alt-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a4e52;
+    margin-bottom: 0.2rem;
+  }
+
+  .alt-val {
+    color: #8a8e92;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .alt-link { text-decoration: none; transition: color 0.2s; }
+  .alt-link:hover { color: #c0c0c0; }
+
+  @media (max-width: 900px) {
+    .forms-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .field-row { grid-template-columns: 1fr; }
+    .form-panel { padding: 1.75rem; }
+  }
+</style>

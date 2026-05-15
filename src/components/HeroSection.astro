@@ -1,0 +1,174 @@
+---
+import PlatformBadge from './PlatformBadge.astro';
+---
+
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">A Podcast for the Trades</span>
+    <h1 class="hero-headline chrome-text">
+      The stories they never put<br class="br-lg" /> on the highlight reel.
+    </h1>
+    <p class="hero-sub">
+      The best conversations happen behind closed doors. Behind the Door is the podcast
+      for the technician grinding right now, the business owner figuring it out alone,
+      and everyone who was told the trades weren't good enough. Host Kaleb Blyton sits
+      down with home service business owners, world-class technicians, and people who
+      built something real. No fluff. No corporate BS. Just the truth.
+    </p>
+    <div class="hero-ctas">
+      <a href="/episodes" class="btn-chrome-lg">Start Listening</a>
+      <a href="/episodes" class="btn-outline-lg">Browse All Episodes</a>
+    </div>
+    <div class="platform-pills">
+      <span class="pills-label">Available on</span>
+      <PlatformBadge platform="apple" size="sm" />
+      <PlatformBadge platform="spotify" size="sm" />
+      <PlatformBadge platform="youtube" size="sm" />
+      <PlatformBadge platform="amazon" size="sm" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #1a1c1e 0%, #16181a 50%, #1e2022 100%);
+    padding: 7rem 1.5rem 6rem;
+    overflow: hidden;
+  }
+
+  /* Grain/noise overlay */
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+    pointer-events: none;
+  }
+
+  /* Subtle radial glow */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192,192,192,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8a8e92;
+    background: rgba(192,192,192,0.07);
+    border: 1px solid #3a3c3e;
+    padding: 0.4em 1.2em;
+    border-radius: 100px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  .chrome-text {
+    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    color: #7a7e82;
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-chrome-lg {
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    color: #1a1c1e;
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-chrome-lg:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-lg {
+    padding: 0.875rem 2rem;
+    border: 1px solid #5a5e62;
+    color: #c0c0c0;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-outline-lg:hover {
+    border-color: #c0c0c0;
+    color: #e8e8e8;
+    transform: translateY(-2px);
+  }
+
+  .platform-pills {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pills-label {
+    font-size: 0.75rem;
+    color: #5a5e62;
+    font-weight: 500;
+    margin-right: 0.25rem;
+  }
+
+  .br-lg { display: none; }
+
+  @media (min-width: 640px) {
+    .br-lg { display: block; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 5rem 1.25rem 4rem; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn-chrome-lg, .btn-outline-lg { text-align: center; }
+  }
+</style>
