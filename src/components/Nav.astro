@@ -12,38 +12,7 @@ const currentPath = Astro.url.pathname;
   <div class="nav-inner">
     <!-- Logo left -->
     <a href="/" class="nav-logo" aria-label="Behind the Door Home">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="44" height="44" aria-hidden="true">
-        <defs>
-          <radialGradient id="navCircleGrad" cx="50%" cy="35%" r="65%">
-            <stop offset="0%" stop-color="#2a2a2a"/>
-            <stop offset="100%" stop-color="#0a0a0a"/>
-          </radialGradient>
-          <linearGradient id="navChromeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#c0c0c0"/>
-            <stop offset="50%" stop-color="#e8e8e8"/>
-            <stop offset="100%" stop-color="#b8b8b8"/>
-          </linearGradient>
-          <linearGradient id="navChromeText" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#c0c0c0"/>
-            <stop offset="30%" stop-color="#ffffff"/>
-            <stop offset="60%" stop-color="#a8a8a8"/>
-            <stop offset="100%" stop-color="#d4d4d4"/>
-          </linearGradient>
-        </defs>
-        <circle cx="50" cy="50" r="48" fill="url(#navChromeBorder)"/>
-        <circle cx="50" cy="50" r="44" fill="url(#navCircleGrad)"/>
-        <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-              font-family="Arial Black, Arial, sans-serif" font-weight="900"
-              font-size="22" fill="url(#navChromeText)" letter-spacing="1">BTD</text>
-        <g stroke="url(#navChromeText)" stroke-width="1.5" opacity="0.7">
-          <line x1="22" y1="64" x2="78" y2="64"/>
-          <line x1="22" y1="69" x2="78" y2="69"/>
-          <line x1="22" y1="74" x2="78" y2="74"/>
-          <line x1="37" y1="64" x2="37" y2="74"/>
-          <line x1="50" y1="64" x2="50" y2="74"/>
-          <line x1="63" y1="64" x2="63" y2="74"/>
-        </g>
-      </svg>
+      <img src="/btd-logo.jpg" alt="Behind the Door" width="44" height="44" class="nav-logo-img" />
       <span class="nav-brand">Behind the Door</span>
     </a>
 
@@ -98,13 +67,16 @@ const currentPath = Astro.url.pathname;
     flex-shrink: 0;
   }
 
+  .nav-logo-img {
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
   .nav-brand {
     font-size: 1.1rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #d0d4d8;
     letter-spacing: -0.02em;
   }
 
