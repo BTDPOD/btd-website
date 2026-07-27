@@ -6,36 +6,47 @@ interface Props {
   episode?: Episode;
   placeholder?: boolean;
   index?: number;
+  image?: string;
+  title?: string;
+  label?: string;
+  desc?: string;
+  href?: string;
 }
 
-const { episode, placeholder = false, index = 0 } = Astro.props;
+const { episode, placeholder = false, index = 0, image, title, label, desc, href } = Astro.props;
 ---
 
 {placeholder ? (
-  <article class="episode-card placeholder-card">
-    <div class="card-thumb placeholder-thumb">
-      <div class="thumb-inner">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
-          <defs>
-            <linearGradient id={`phChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#c0c0c0"/>
-              <stop offset="50%" stop-color="#e8e8e8"/>
-              <stop offset="100%" stop-color="#909090"/>
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="48" fill={`url(#phChrome${index})`}/>
-          <circle cx="50" cy="50" r="44" fill="#111"/>
-          <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                font-family="Arial Black" font-weight="900" font-size="22"
-                fill={`url(#phChrome${index})`} letter-spacing="1">BTD</text>
-        </svg>
+  <article class={`episode-card ${image ? '' : 'placeholder-card'}`}>
+    {image ? (
+      <div class="card-thumb-link">
+        <img src={image} alt={title ?? 'Behind the Door episode'} class="card-thumb-img" loading="lazy" width="300" height="300" />
       </div>
-    </div>
+    ) : (
+      <div class="card-thumb placeholder-thumb">
+        <div class="thumb-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
+            <defs>
+              <linearGradient id={`phChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c0c0c0"/>
+                <stop offset="50%" stop-color="#e8e8e8"/>
+                <stop offset="100%" stop-color="#909090"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="48" fill={`url(#phChrome${index})`}/>
+            <circle cx="50" cy="50" r="44" fill="#111"/>
+            <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+                  font-family="Arial Black" font-weight="900" font-size="22"
+                  fill={`url(#phChrome${index})`} letter-spacing="1">BTD</text>
+          </svg>
+        </div>
+      </div>
+    )}
     <div class="card-body">
-      <span class="ep-label">Coming Soon</span>
-      <h3 class="ep-title chrome-text">Episode Dropping Soon</h3>
-      <p class="ep-desc">New episodes are coming. Subscribe so you don't miss the first drop.</p>
-      <a href="/subscribe" class="btn-outline-sm">Subscribe Now</a>
+      <span class="ep-label">{label ?? 'Coming Soon'}</span>
+      <h3 class="ep-title chrome-text">{title ?? 'Episode Dropping Soon'}</h3>
+      <p class="ep-desc">{desc ?? "New episodes are coming. Subscribe so you don't miss the first drop."}</p>
+      <a href={href ?? '/subscribe'} class="btn-outline-sm">{href ? 'Learn More' : 'Subscribe Now'}</a>
     </div>
   </article>
 ) : episode ? (

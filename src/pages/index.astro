@@ -110,7 +110,15 @@ const recentEpisodes = episodes.slice(1, 4);
             ))
           ) : (
             <>
-              <EpisodeCard placeholder index={0} />
+              <EpisodeCard
+                placeholder
+                index={0}
+                image="/episodes/empire-blueprint.jpg"
+                label="Featured"
+                title="The Empire Blueprint"
+                desc="Featuring Ken Goodrich. Subscribe so you don't miss it when it drops."
+                href="/subscribe"
+              />
               <EpisodeCard placeholder index={1} />
               <EpisodeCard placeholder index={2} />
             </>
