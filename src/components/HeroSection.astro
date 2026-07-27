@@ -18,16 +18,13 @@ import PlatformBadge from './PlatformBadge.astro';
   <div class="hero-noise"></div>
   <div class="hero-inner">
     <img src="/btd-logo.png" alt="Behind the Door podcast logo" class="hero-logo" width="230" height="219" />
-    <span class="eyebrow">A Podcast for the Trades</span>
+    <span class="eyebrow">Real Talk for the Trades</span>
     <h1 class="hero-headline chrome-text">
-      The stories they never put<br class="br-lg" /> on the highlight reel.
+      No fluff. No corporate BS.<br class="br-lg" /> Just the truth.
     </h1>
     <p class="hero-sub">
-      The best conversations happen behind closed doors. Behind the Door is the podcast
-      for the technician grinding right now, the business owner figuring it out alone,
-      and everyone who was told the trades weren't good enough. Host Kaleb Blyton sits
-      down with home service business owners, world-class technicians, and people who
-      built something real. No fluff. No corporate BS. Just the truth.
+      The podcast for the technician grinding right now and the owner figuring it out
+      alone. Host Kaleb Blyton sits down with the people who built something real.
     </p>
     <div class="hero-ctas">
       <a href="/episodes" class="btn-chrome-lg">Start Listening</a>
@@ -100,7 +97,7 @@ import PlatformBadge from './PlatformBadge.astro';
   .hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 900px;
+    max-width: 1120px;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -129,19 +126,22 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   .hero-headline {
-    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-size: clamp(2.1rem, 7.4vw, 5.25rem);
     font-weight: 900;
-    line-height: 1.05;
+    line-height: 1.04;
     letter-spacing: -0.03em;
     margin: 0;
+    text-wrap: balance;
+    width: 100%;
   }
 
   .hero-sub {
     color: #7a7e82;
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
     line-height: 1.7;
-    max-width: 680px;
+    max-width: 740px;
     margin: 0;
+    text-wrap: pretty;
   }
 
   .hero-ctas {
