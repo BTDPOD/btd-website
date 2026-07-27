@@ -43,9 +43,7 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: linear-gradient(180deg, #c8ccd0 0%, #a8adb2 100%);
-    border-bottom: 1px solid #8a8f94;
-    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, #4a4e54 0%, #3a3e44 16%, #2c2f34 48%, #202327 80%, #17191c 100%); border-bottom: 1px solid #56595e;    backdrop-filter: blur(8px);
   }
 
   .nav-inner {
@@ -76,8 +74,7 @@ const currentPath = Astro.url.pathname;
   .nav-brand {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #1a1c1e;
-    letter-spacing: -0.02em;
+    color: #e8eaec;    letter-spacing: -0.02em;
   }
 
   .nav-links {
@@ -87,8 +84,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .nav-link {
-    color: #2a2d30;
-    text-decoration: none;
+    color: #c4c7cb;    text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     padding: 0.5rem 0.75rem;
@@ -98,9 +94,7 @@ const currentPath = Astro.url.pathname;
 
   .nav-link:hover,
   .nav-link.active {
-    color: #000;
-    background: rgba(0,0,0,0.08);
-  }
+    color: #ffffff; background: rgba(255,255,255,0.1);  }
 
   .nav-subscribe {
     margin-left: 0.5rem;
@@ -133,8 +127,7 @@ const currentPath = Astro.url.pathname;
     display: block;
     width: 24px;
     height: 2px;
-    background: #1a1c1e;
-    border-radius: 2px;
+    background: #d0d4d8;    border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
   }
 
@@ -153,8 +146,7 @@ const currentPath = Astro.url.pathname;
       top: 70px;
       left: 0;
       right: 0;
-      background: linear-gradient(180deg, #c8ccd0 0%, #a8adb2 100%);
-      border-bottom: 1px solid #8a8f94;
+    background: linear-gradient(180deg, #3a3e44 0%, #2c2f34 50%, #1c1e22 100%); border-bottom: 1px solid #56595e; 
       flex-direction: column;
       align-items: stretch;
       padding: 1rem 1.5rem;
