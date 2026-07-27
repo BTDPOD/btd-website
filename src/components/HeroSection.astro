@@ -5,7 +5,7 @@ import PlatformBadge from './PlatformBadge.astro';
 <section class="hero">
   <div class="hero-noise"></div>
   <div class="hero-inner">
-    <img src="/btd-logo.jpg" alt="Behind the Door podcast logo" class="hero-logo" width="180" height="180" />
+    <img src="/btd-logo.png" alt="Behind the Door podcast logo" class="hero-logo" width="230" height="219" />
     <span class="eyebrow">A Podcast for the Trades</span>
     <h1 class="hero-headline chrome-text">
       The stories they never put<br class="br-lg" /> on the highlight reel.
@@ -71,11 +71,10 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   .hero-logo {
-    width: clamp(130px, 20vw, 180px);
+    width: clamp(180px, 26vw, 250px);
     height: auto;
-    border-radius: 50%;
     margin-bottom: 0.25rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.55));
   }
 
   .eyebrow {

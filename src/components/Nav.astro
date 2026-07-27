@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
   <div class="nav-inner">
     <!-- Logo left -->
     <a href="/" class="nav-logo" aria-label="Behind the Door Home">
-      <img src="/btd-logo.jpg" alt="Behind the Door" width="44" height="44" class="nav-logo-img" />
+      <img src="/btd-logo.png" alt="Behind the Door" width="50" height="48" class="nav-logo-img" />
       <span class="nav-brand">Behind the Door</span>
     </a>
 
@@ -66,8 +66,9 @@ const currentPath = Astro.url.pathname;
   }
 
   .nav-logo-img {
-    border-radius: 50%;
-    object-fit: cover;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
     flex-shrink: 0;
   }
 
