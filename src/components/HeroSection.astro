@@ -45,6 +45,9 @@ import PlatformBadge from './PlatformBadge.astro';
     background: linear-gradient(160deg, #1a1c1e 0%, #16181a 50%, #1e2022 100%);
     padding: 7rem 1.5rem 6rem;
     overflow: hidden;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
   }
 
   /* Background montage video */
@@ -54,6 +57,7 @@ import PlatformBadge from './PlatformBadge.astro';
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 22%;
     opacity: 0.6;
     pointer-events: none;
     z-index: 0;
@@ -97,6 +101,7 @@ import PlatformBadge from './PlatformBadge.astro';
     position: relative;
     z-index: 1;
     max-width: 1120px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     display: flex;
