@@ -43,7 +43,9 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: linear-gradient(180deg, #4a4e54 0%, #3a3e44 16%, #2c2f34 48%, #202327 80%, #17191c 100%); border-bottom: 1px solid #56595e;    backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, #1e2023 0%, #17191c 60%, #131518 100%);
+    border-bottom: 1px solid var(--accent-border);
+    backdrop-filter: blur(8px);
   }
 
   .nav-inner {
@@ -75,7 +77,8 @@ const currentPath = Astro.url.pathname;
   .nav-brand {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #e8eaec;    letter-spacing: -0.02em;
+    color: var(--accent-light);
+    letter-spacing: -0.02em;
   }
 
   .nav-links {
@@ -85,18 +88,22 @@ const currentPath = Astro.url.pathname;
   }
 
   .nav-link {
-    color: #c4c7cb;    text-decoration: none;
+    color: var(--accent-dim);
+    text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 500;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
   }
 
   .nav-link:hover,
   .nav-link.active {
     color: var(--accent-light);
     background: var(--accent-soft);
+    border-color: var(--accent-border);
   }
 
   .nav-subscribe {
@@ -104,16 +111,17 @@ const currentPath = Astro.url.pathname;
     padding: 0.5rem 1.25rem;
     font-size: 0.875rem;
     font-weight: 700;
-    border-radius: 6px;
+    border-radius: 100px;
     text-decoration: none;
-    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
-    color: #1a1c1e;
-    transition: opacity 0.2s, transform 0.15s;
+    background: var(--accent-gradient);
+    color: #17191c;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
   }
 
   .nav-subscribe:hover {
-    opacity: 0.9;
+    opacity: 0.95;
     transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(245, 145, 50, 0.3);
   }
 
   .hamburger {
@@ -130,7 +138,8 @@ const currentPath = Astro.url.pathname;
     display: block;
     width: 24px;
     height: 2px;
-    background: #d0d4d8;    border-radius: 2px;
+    background: var(--accent-light);
+    border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
   }
 
@@ -149,7 +158,8 @@ const currentPath = Astro.url.pathname;
       top: 70px;
       left: 0;
       right: 0;
-    background: linear-gradient(180deg, #3a3e44 0%, #2c2f34 50%, #1c1e22 100%); border-bottom: 1px solid #56595e; 
+    background: linear-gradient(180deg, #1e2023 0%, #17191c 60%, #131518 100%);
+    border-bottom: 1px solid var(--accent-border);
       flex-direction: column;
       align-items: stretch;
       padding: 1rem 1.5rem;
