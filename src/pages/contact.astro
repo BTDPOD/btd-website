@@ -325,7 +325,11 @@ import Layout from '../layouts/Layout.astro';
 
   .field input:focus,
   .field select:focus,
-  .field textarea:focus { border-color: #8a8e92; }
+  .field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+    outline: none;
+  }
 
   .field select {
     appearance: none;

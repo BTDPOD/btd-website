@@ -214,7 +214,7 @@ const recentEpisodes = episodes.slice(1, 4);
   .chrome-underline {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, #5a5e62, transparent);
+    background: linear-gradient(90deg, var(--accent), transparent);
     min-width: 40px;
   }
 
@@ -227,7 +227,7 @@ const recentEpisodes = episodes.slice(1, 4);
     transition: color 0.2s;
   }
 
-  .view-all:hover { color: #c0c0c0; }
+  .view-all:hover { color: var(--accent-light); }
 
   /* Latest section */
   .latest-section { background: #1a1c1e; }
@@ -283,8 +283,8 @@ const recentEpisodes = episodes.slice(1, 4);
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #a8a8a8;
-    background: rgba(168,168,168,0.1);
+    color: var(--accent-light);
+    background: var(--accent-soft);
     padding: 0.25em 0.75em;
     border-radius: 4px;
   }
