@@ -1,6 +1,8 @@
 ---
+const YOUTUBE_URL = 'https://www.youtube.com/@behindthedoorpodcast-btd';
+
 const navLinks = [
-  { href: '/episodes', label: 'Episodes' },
+  { href: YOUTUBE_URL, label: 'Watch', external: true },
   { href: '/guests', label: 'Guests' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
@@ -21,7 +23,9 @@ const currentPath = Astro.url.pathname;
       {navLinks.map(link => (
         <a
           href={link.href}
-          class={`nav-link ${currentPath.startsWith(link.href) ? 'active' : ''}`}
+          class={`nav-link ${!link.external && currentPath.startsWith(link.href) ? 'active' : ''}`}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
         >
           {link.label}
         </a>
