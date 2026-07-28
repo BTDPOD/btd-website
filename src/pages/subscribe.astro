@@ -5,15 +5,15 @@ import PlatformBadge from '../components/PlatformBadge.astro';
 
 <Layout
   title="Subscribe — Behind the Door Podcast"
-  description="Listen to Behind the Door on Apple Podcasts, Spotify, YouTube, Amazon Music, and more. Subscribe to never miss a new episode."
+  description="Listen to Behind the Door on Spotify, watch on YouTube, or subscribe via RSS. Never miss a new episode."
 >
   <section class="subscribe-hero noise-overlay">
     <div class="container">
       <span class="eyebrow">Never Miss an Episode</span>
       <h1 class="page-title chrome-text">Listen Anywhere.</h1>
       <p class="page-sub">
-        Behind the Door is on every major podcast platform. Pick your favorite and hit subscribe —
-        new episodes will show up automatically.
+        Listen on Spotify, watch on YouTube, or plug the RSS feed into your player of choice.
+        Hit subscribe and new episodes show up automatically.
       </p>
     </div>
   </section>
@@ -22,18 +22,6 @@ import PlatformBadge from '../components/PlatformBadge.astro';
     <div class="container">
       <h2 class="section-title chrome-text">Choose Your Platform</h2>
       <div class="platforms-grid-lg">
-        <!-- Apple Podcasts -->
-        <a href="https://podcasts.apple.com/search?term=behind+the+door+podcast" target="_blank" rel="noopener noreferrer" class="platform-card">
-          <div class="platform-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          </div>
-          <div class="platform-info">
-            <div class="platform-name">Apple Podcasts</div>
-            <div class="platform-desc">The #1 podcast app on iOS. Subscribe and auto-download new episodes.</div>
-          </div>
-          <div class="platform-arrow">&rarr;</div>
-        </a>
-
         <!-- Spotify -->
         <a href="https://open.spotify.com/show/033X6BKpiU4FwpcmELqCrY" target="_blank" rel="noopener noreferrer" class="platform-card">
           <div class="platform-icon">
@@ -54,54 +42,6 @@ import PlatformBadge from '../components/PlatformBadge.astro';
           <div class="platform-info">
             <div class="platform-name">YouTube</div>
             <div class="platform-desc">Watch the full video version of every episode. Subscribe to the channel.</div>
-          </div>
-          <div class="platform-arrow">&rarr;</div>
-        </a>
-
-        <!-- Amazon Music -->
-        <a href="https://music.amazon.com/podcasts/search?keywords=behind+the+door" target="_blank" rel="noopener noreferrer" class="platform-card">
-          <div class="platform-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M.045 18.02c.072-.116.187-.127.304-.076 3.849 2.01 7.97 2.89 12.17 2.537 2.95-.25 5.77-1.03 8.44-2.37.186-.097.369-.063.468.145.098.209.002.39-.185.487-2.87 1.48-5.89 2.35-9.04 2.66-4.39.43-8.63-.36-12.7-2.45-.194-.1-.244-.308-.147-.55l-.31.117z"/></svg>
-          </div>
-          <div class="platform-info">
-            <div class="platform-name">Amazon Music</div>
-            <div class="platform-desc">Listen free with Amazon Music or Audible. Works with Alexa.</div>
-          </div>
-          <div class="platform-arrow">&rarr;</div>
-        </a>
-
-        <!-- Google Podcasts -->
-        <a href="https://podcasts.google.com/search/behind%20the%20door" target="_blank" rel="noopener noreferrer" class="platform-card">
-          <div class="platform-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12.25 0A12.25 12.25 0 0 0 0 12.25a12.25 12.25 0 0 0 12.25 12.25 12.25 12.25 0 0 0 12.25-12.25A12.25 12.25 0 0 0 12.25 0zm0 4.5a2.25 2.25 0 0 1 2.25 2.25v5a2.25 2.25 0 0 1-2.25 2.25 2.25 2.25 0 0 1-2.25-2.25v-5A2.25 2.25 0 0 1 12.25 4.5zm0 11a2.25 2.25 0 0 1 2.25 2.25 2.25 2.25 0 0 1-2.25 2.25 2.25 2.25 0 0 1-2.25-2.25 2.25 2.25 0 0 1 2.25-2.25zm-5-7.75a2.25 2.25 0 0 1 2.25 2.25 2.25 2.25 0 0 1-2.25 2.25A2.25 2.25 0 0 1 5 10a2.25 2.25 0 0 1 2.25-2.25zm10 0A2.25 2.25 0 0 1 19.5 10a2.25 2.25 0 0 1-2.25 2.25A2.25 2.25 0 0 1 15 10a2.25 2.25 0 0 1 2.25-2.25z"/></svg>
-          </div>
-          <div class="platform-info">
-            <div class="platform-name">Google Podcasts</div>
-            <div class="platform-desc">Listen on Android and the web. Syncs across all your devices.</div>
-          </div>
-          <div class="platform-arrow">&rarr;</div>
-        </a>
-
-        <!-- Pocket Casts -->
-        <a href="https://pca.st/search?q=behind+the+door" target="_blank" rel="noopener noreferrer" class="platform-card">
-          <div class="platform-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 4.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12 7.858 4.5 12 4.5zm0 2.5c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 2.5c1.381 0 2.5 1.119 2.5 2.5S13.381 14.5 12 14.5 9.5 13.381 9.5 12s1.119-2.5 2.5-2.5z"/></svg>
-          </div>
-          <div class="platform-info">
-            <div class="platform-name">Pocket Casts</div>
-            <div class="platform-desc">The best podcast app for power listeners. Available on iOS and Android.</div>
-          </div>
-          <div class="platform-arrow">&rarr;</div>
-        </a>
-
-        <!-- Overcast -->
-        <a href="https://overcast.fm/search?q=behind+the+door" target="_blank" rel="noopener noreferrer" class="platform-card">
-          <div class="platform-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.2c4.308 0 7.8 3.492 7.8 7.8s-3.492 7.8-7.8 7.8S4.2 16.308 4.2 12 7.692 4.2 12 4.2zm0 1.8c-3.315 0-6 2.685-6 6s2.685 6 6 6 6-2.685 6-6-2.685-6-6-6zm.9 2.4V12l3 1.8-.9 1.5L12 13.2V8.4h.9z"/></svg>
-          </div>
-          <div class="platform-info">
-            <div class="platform-name">Overcast</div>
-            <div class="platform-desc">iOS podcast app with Smart Speed and Voice Boost. Highly rated.</div>
           </div>
           <div class="platform-arrow">&rarr;</div>
         </a>
