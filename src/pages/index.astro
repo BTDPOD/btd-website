@@ -332,11 +332,11 @@ const recentEpisodes = episodes.slice(1, 4);
   .btn-chrome {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    background: var(--accent-gradient);
     color: #1a1c1e;
     font-weight: 800;
     font-size: 0.9rem;
-    border-radius: 8px;
+    border-radius: 100px;
     text-decoration: none;
     transition: opacity 0.2s, transform 0.15s;
   }
@@ -346,16 +346,16 @@ const recentEpisodes = episodes.slice(1, 4);
   .btn-outline {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 1px solid #5a5e62;
-    color: #c0c0c0;
+    border: 1px solid var(--accent-border);
+    color: var(--accent-dim);
     font-weight: 700;
     font-size: 0.9rem;
-    border-radius: 8px;
+    border-radius: 100px;
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s;
   }
 
-  .btn-outline:hover { border-color: #c0c0c0; color: #e8e8e8; }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent-light); }
 
   .btn-ghost {
     display: inline-block;
@@ -367,7 +367,7 @@ const recentEpisodes = episodes.slice(1, 4);
     transition: color 0.2s;
   }
 
-  .btn-ghost:hover { color: #c0c0c0; }
+  .btn-ghost:hover { color: var(--accent-dim); }
 
   /* Episodes grid */
   .recent-section { background: #16181a; }

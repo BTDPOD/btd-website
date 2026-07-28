@@ -254,11 +254,11 @@ const related = allEpisodes
     display: inline-flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a8a8a8 50%, #d4d4d4 75%, #b8b8b8 100%);
+    background: var(--accent-gradient);
     color: #1a1c1e;
     font-weight: 800;
     font-size: 0.9rem;
-    border-radius: 8px;
+    border-radius: 100px;
     text-decoration: none;
     transition: opacity 0.2s, transform 0.15s;
     border: none;
@@ -271,16 +271,16 @@ const related = allEpisodes
   .btn-outline {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 1px solid #5a5e62;
-    color: #c0c0c0;
+    border: 1px solid var(--accent-border);
+    color: var(--accent-dim);
     font-weight: 700;
     font-size: 0.9rem;
-    border-radius: 8px;
+    border-radius: 100px;
     text-decoration: none;
     transition: border-color 0.2s;
   }
 
-  .btn-outline:hover { border-color: #c0c0c0; }
+  .btn-outline:hover { border-color: var(--accent); }
 
   .btn-share {
     display: inline-flex;
@@ -292,13 +292,13 @@ const related = allEpisodes
     color: #8a8e92;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
     font-family: inherit;
     transition: border-color 0.2s, color 0.2s;
   }
 
-  .btn-share:hover { border-color: #7a7e82; color: #c0c0c0; }
+  .btn-share:hover { border-color: #7a7e82; color: var(--accent-dim); }
 
   /* Player bar */
   .player-bar {
