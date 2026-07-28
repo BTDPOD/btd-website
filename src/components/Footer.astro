@@ -8,38 +8,7 @@ const year = new Date().getFullYear();
       <!-- Brand column -->
       <div class="footer-brand">
         <a href="/" class="footer-logo-link" aria-label="Behind the Door Home">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="52" height="52" aria-hidden="true">
-            <defs>
-              <radialGradient id="ftCircleGrad" cx="50%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#2a2a2a"/>
-                <stop offset="100%" stop-color="#0a0a0a"/>
-              </radialGradient>
-              <linearGradient id="ftChromeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#b4bcb4"/>
-                <stop offset="50%" stop-color="#e0e0e0"/>
-                <stop offset="100%" stop-color="#b4bcb4"/>
-              </linearGradient>
-              <linearGradient id="ftChromeText" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#b4bcb4"/>
-                <stop offset="30%" stop-color="#ffffff"/>
-                <stop offset="60%" stop-color="#828e82"/>
-                <stop offset="100%" stop-color="#e0e0e0"/>
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="48" fill="url(#ftChromeBorder)"/>
-            <circle cx="50" cy="50" r="44" fill="url(#ftCircleGrad)"/>
-            <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                  font-family="Arial Black, Arial, sans-serif" font-weight="900"
-                  font-size="22" fill="url(#ftChromeText)" letter-spacing="1">BTD</text>
-            <g stroke="url(#ftChromeText)" stroke-width="1.5" opacity="0.7">
-              <line x1="22" y1="64" x2="78" y2="64"/>
-              <line x1="22" y1="69" x2="78" y2="69"/>
-              <line x1="22" y1="74" x2="78" y2="74"/>
-              <line x1="37" y1="64" x2="37" y2="74"/>
-              <line x1="50" y1="64" x2="50" y2="74"/>
-              <line x1="63" y1="64" x2="63" y2="74"/>
-            </g>
-          </svg>
+          <img src="/btd-logo.png" alt="Behind the Door" width="62" height="60" class="footer-logo-img" />
         </a>
         <div>
           <div class="footer-show-name">Behind the Door</div>
@@ -76,7 +45,7 @@ const year = new Date().getFullYear();
           <h4>Listen</h4>
           <a href="/episodes">All Episodes</a>
           <a href="/subscribe">Apple Podcasts</a>
-          <a href="/subscribe">Spotify</a>
+          <a href="https://open.spotify.com/show/033X6BKpiU4FwpcmELqCrY" target="_blank" rel="noopener noreferrer">Spotify</a>
           <a href="https://www.youtube.com/@behindthedoorpodcast-btd" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://feeds.transistor.fm/behind-the-door" target="_blank" rel="noopener">RSS Feed</a>
         </div>
@@ -137,6 +106,12 @@ const year = new Date().getFullYear();
   }
 
   .footer-logo-link { display: inline-block; }
+
+  .footer-logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
 
   .footer-show-name {
     font-size: 1.1rem;
