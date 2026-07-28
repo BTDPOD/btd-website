@@ -42,7 +42,7 @@ import PlatformBadge from './PlatformBadge.astro';
 <style>
   .hero {
     position: relative;
-    background: linear-gradient(160deg, #1a1c1e 0%, #16181a 50%, #1e2022 100%);
+    background: linear-gradient(160deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg-alt) 100%);
     padding: 7rem 1.5rem 6rem;
     overflow: hidden;
     min-height: 82vh;
@@ -70,8 +70,8 @@ import PlatformBadge from './PlatformBadge.astro';
     z-index: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 70% 60% at 50% 45%, rgba(20,22,24,0.72) 0%, rgba(20,22,24,0.45) 55%, transparent 100%),
-      linear-gradient(180deg, rgba(22,24,26,0.55) 0%, rgba(22,24,26,0.25) 35%, rgba(22,24,26,0.6) 100%);
+      radial-gradient(ellipse 70% 60% at 50% 45%, rgba(15,21,24,0.72) 0%, rgba(15,21,24,0.45) 55%, transparent 100%),
+      linear-gradient(180deg, rgba(15,21,24,0.55) 0%, rgba(15,21,24,0.25) 35%, rgba(15,21,24,0.6) 100%);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -93,7 +93,7 @@ import PlatformBadge from './PlatformBadge.astro';
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192,192,192,0.04) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(224,224,224,0.04) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -115,9 +115,9 @@ import PlatformBadge from './PlatformBadge.astro';
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--accent-light);
-    background: var(--accent-soft);
-    border: 1px solid var(--accent-border);
+    color: var(--sage);
+    background: rgba(58, 96, 110, 0.35);
+    border: 1px solid var(--slate);
     padding: 0.4em 1.2em;
     border-radius: 100px;
   }
@@ -134,7 +134,7 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   .hero-sub {
-    color: #7a7e82;
+    color: var(--text-2);
     font-size: clamp(0.95rem, 2.2vw, 1.1rem);
     line-height: 1.7;
     max-width: 740px;
@@ -152,7 +152,7 @@ import PlatformBadge from './PlatformBadge.astro';
   .btn-chrome-lg {
     padding: 0.875rem 2rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     font-size: 1rem;
     border-radius: 100px;
@@ -193,7 +193,7 @@ import PlatformBadge from './PlatformBadge.astro';
 
   .pills-label {
     font-size: 0.75rem;
-    color: #5a5e62;
+    color: var(--slate-grey);
     font-weight: 500;
     margin-right: 0.25rem;
   }

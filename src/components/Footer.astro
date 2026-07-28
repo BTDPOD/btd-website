@@ -15,15 +15,15 @@ const year = new Date().getFullYear();
                 <stop offset="100%" stop-color="#0a0a0a"/>
               </radialGradient>
               <linearGradient id="ftChromeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#c0c0c0"/>
-                <stop offset="50%" stop-color="#e8e8e8"/>
-                <stop offset="100%" stop-color="#b8b8b8"/>
+                <stop offset="0%" stop-color="#b4bcb4"/>
+                <stop offset="50%" stop-color="#e0e0e0"/>
+                <stop offset="100%" stop-color="#b4bcb4"/>
               </linearGradient>
               <linearGradient id="ftChromeText" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#c0c0c0"/>
+                <stop offset="0%" stop-color="#b4bcb4"/>
                 <stop offset="30%" stop-color="#ffffff"/>
-                <stop offset="60%" stop-color="#a8a8a8"/>
-                <stop offset="100%" stop-color="#d4d4d4"/>
+                <stop offset="60%" stop-color="#828e82"/>
+                <stop offset="100%" stop-color="#e0e0e0"/>
               </linearGradient>
             </defs>
             <circle cx="50" cy="50" r="48" fill="url(#ftChromeBorder)"/>
@@ -104,8 +104,8 @@ const year = new Date().getFullYear();
 
 <style>
   .site-footer {
-    background: #16181a;
-    border-top: 1px solid #2e3032;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
     margin-top: auto;
   }
 
@@ -121,7 +121,7 @@ const year = new Date().getFullYear();
     gap: 3rem;
     margin-bottom: 2.5rem;
     padding-bottom: 2.5rem;
-    border-bottom: 1px solid #2e3032;
+    border-bottom: 1px solid var(--border);
   }
 
   .footer-brand {
@@ -135,14 +135,11 @@ const year = new Date().getFullYear();
   .footer-show-name {
     font-size: 1.1rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .footer-tagline {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 0.875rem;
     font-style: italic;
     margin-top: 0.25rem;
@@ -159,7 +156,7 @@ const year = new Date().getFullYear();
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #8a8e92;
+    color: var(--text-dim);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.2s;
@@ -174,7 +171,7 @@ const year = new Date().getFullYear();
   }
 
   .footer-col h4 {
-    color: #c0c0c0;
+    color: var(--text-2);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -184,7 +181,7 @@ const year = new Date().getFullYear();
 
   .footer-col a {
     display: block;
-    color: #6a6e72;
+    color: var(--text-dim);
     text-decoration: none;
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
@@ -202,7 +199,7 @@ const year = new Date().getFullYear();
   }
 
   .footer-copy {
-    color: #4a4e52;
+    color: var(--slate-grey);
     font-size: 0.8rem;
     margin: 0;
   }
@@ -215,13 +212,13 @@ const year = new Date().getFullYear();
   }
 
   .footer-legal a {
-    color: #4a4e52;
+    color: var(--slate-grey);
     text-decoration: none;
     transition: color 0.2s;
   }
 
   .footer-legal a:hover { color: var(--accent-light); }
-  .sep { color: #3a3e42; }
+  .sep { color: var(--border); }
 
   @media (max-width: 768px) {
     .footer-top {

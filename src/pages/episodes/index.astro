@@ -40,9 +40,9 @@ const episodes = await fetchEpisodes();
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="120" height="120">
               <defs>
                 <linearGradient id="emptyChrome" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#c0c0c0"/>
-                  <stop offset="50%" stop-color="#e8e8e8"/>
-                  <stop offset="100%" stop-color="#909090"/>
+                  <stop offset="0%" stop-color="#b4bcb4"/>
+                  <stop offset="50%" stop-color="#e0e0e0"/>
+                  <stop offset="100%" stop-color="#828e82"/>
                 </linearGradient>
               </defs>
               <circle cx="50" cy="50" r="48" fill="url(#emptyChrome)"/>
@@ -68,9 +68,9 @@ const episodes = await fetchEpisodes();
   .container { max-width: 1200px; margin: 0 auto; }
 
   .episodes-hero {
-    background: linear-gradient(160deg, #16181a 0%, #1e2022 100%);
+    background: linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-alt) 100%);
     padding: 5rem 1.5rem 4rem;
-    border-bottom: 1px solid #2e3032;
+    border-bottom: 1px solid var(--border);
   }
 
   .eyebrow {
@@ -79,7 +79,7 @@ const episodes = await fetchEpisodes();
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6a6e72;
+    color: var(--text-dim);
     margin-bottom: 0.75rem;
   }
 
@@ -90,14 +90,11 @@ const episodes = await fetchEpisodes();
   }
 
   .chrome-text {
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .page-sub {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 1rem;
     max-width: 560px;
     margin: 0;
@@ -113,17 +110,17 @@ const episodes = await fetchEpisodes();
     justify-content: space-between;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #2e3032;
+    border-bottom: 1px solid var(--border);
   }
 
   .ep-count {
-    color: #8a8e92;
+    color: var(--text-dim);
     font-size: 0.875rem;
     font-weight: 600;
   }
 
   .sort-label {
-    color: #5a5e62;
+    color: var(--slate-grey);
     font-size: 0.8rem;
   }
 
@@ -152,7 +149,7 @@ const episodes = await fetchEpisodes();
   }
 
   .empty-sub {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 1rem;
     max-width: 440px;
     line-height: 1.65;
@@ -163,7 +160,7 @@ const episodes = await fetchEpisodes();
     display: inline-block;
     padding: 0.875rem 2rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     border-radius: 100px;
     text-decoration: none;

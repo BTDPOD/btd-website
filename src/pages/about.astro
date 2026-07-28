@@ -132,9 +132,9 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   .container { max-width: 1100px; margin: 0 auto; }
 
   .about-hero {
-    background: linear-gradient(160deg, #16181a, #1e2022);
+    background: linear-gradient(160deg, var(--bg-alt), var(--bg-alt));
     padding: 5rem 1.5rem 4rem;
-    border-bottom: 1px solid #2e3032;
+    border-bottom: 1px solid var(--border);
   }
 
   .eyebrow, .section-eyebrow {
@@ -143,7 +143,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6a6e72;
+    color: var(--text-dim);
     margin-bottom: 0.75rem;
   }
 
@@ -155,14 +155,11 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   }
 
   .chrome-text {
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .page-sub {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 1rem;
     max-width: 560px;
     line-height: 1.65;
@@ -172,7 +169,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   /* Host section */
   .host-section {
     padding: 5rem 1.5rem;
-    background: #1a1c1e;
+    background: var(--bg);
   }
 
   .host-grid {
@@ -193,7 +190,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
     width: 280px;
     height: 280px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #c0c0c0 0%, #909090 50%, #d4d4d4 100%);
+    background: linear-gradient(135deg, var(--text-2) 0%, var(--text-dim) 50%, var(--text) 100%);
     padding: 3px;
     flex-shrink: 0;
   }
@@ -202,13 +199,13 @@ import SubscribeSection from '../components/SubscribeSection.astro';
     width: 100%;
     height: 100%;
     border-radius: 14px;
-    background: linear-gradient(135deg, #1e2022, #2a2c2e);
+    background: linear-gradient(135deg, var(--bg-alt), var(--surface-2));
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 5rem;
     font-weight: 900;
-    color: #3a3e42;
+    color: var(--border);
     letter-spacing: -0.05em;
   }
 
@@ -224,7 +221,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #5a5e62;
+    color: var(--slate-grey);
   }
 
   .badge-name {
@@ -246,7 +243,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   }
 
   .bio-text p {
-    color: #6a6e72;
+    color: var(--text-dim);
     line-height: 1.75;
     font-size: 0.95rem;
   }
@@ -261,7 +258,7 @@ import SubscribeSection from '../components/SubscribeSection.astro';
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     font-size: 0.9rem;
     border-radius: 100px;
@@ -287,10 +284,10 @@ import SubscribeSection from '../components/SubscribeSection.astro';
 
   /* Mission section */
   .mission-section {
-    background: #16181a;
+    background: var(--bg-alt);
     padding: 5rem 1.5rem;
-    border-top: 1px solid #2e3032;
-    border-bottom: 1px solid #2e3032;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .mission-content { display: flex; flex-direction: column; gap: 3rem; }
@@ -311,8 +308,8 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   }
 
   .pillar {
-    background: #1e2022;
-    border: 1px solid #2e3032;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 2rem;
     display: flex;
@@ -323,22 +320,22 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   .pillar-icon {
     width: 52px;
     height: 52px;
-    background: rgba(192,192,192,0.08);
+    background: rgba(224,224,224,0.08);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #a0a4a8;
+    color: var(--text-2);
   }
 
   .pillar h3 {
     font-size: 1rem;
     font-weight: 800;
-    color: #d4d4d4;
+    color: var(--text);
   }
 
   .pillar p {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 0.875rem;
     line-height: 1.6;
     margin: 0;
@@ -346,14 +343,14 @@ import SubscribeSection from '../components/SubscribeSection.astro';
 
   /* Stats */
   .stats-section {
-    background: linear-gradient(160deg, #1e2022, #16181a);
+    background: linear-gradient(160deg, var(--bg-alt), var(--bg-alt));
     padding: 5rem 1.5rem;
   }
 
   .stats-title {
     font-size: 1.25rem;
     font-weight: 800;
-    color: #8a8e92;
+    color: var(--text-dim);
     text-align: center;
     margin: 0 0 3rem;
     letter-spacing: 0.05em;
@@ -368,8 +365,8 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   }
 
   .stat-card {
-    background: #1a1c1e;
-    border: 1px solid #2e3032;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 2rem 1.5rem;
     text-align: center;
@@ -387,12 +384,12 @@ import SubscribeSection from '../components/SubscribeSection.astro';
   .stat-label {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #c0c0c0;
+    color: var(--text-2);
   }
 
   .stat-desc {
     font-size: 0.8rem;
-    color: #5a5e62;
+    color: var(--slate-grey);
     line-height: 1.4;
   }
 

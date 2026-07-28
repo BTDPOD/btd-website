@@ -136,9 +136,9 @@ import Layout from '../layouts/Layout.astro';
   .container { max-width: 860px; margin: 0 auto; }
 
   .legal-hero {
-    background: linear-gradient(160deg, #16181a, #1e2022);
+    background: linear-gradient(160deg, var(--bg-alt), var(--bg-alt));
     padding: 4rem 1.5rem 3rem;
-    border-bottom: 1px solid #2e3032;
+    border-bottom: 1px solid var(--border);
   }
 
   .eyebrow {
@@ -147,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6a6e72;
+    color: var(--text-dim);
     margin-bottom: 0.75rem;
   }
 
@@ -158,14 +158,11 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .chrome-text {
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .last-updated {
-    color: #4a4e52;
+    color: var(--slate-grey);
     font-size: 0.85rem;
     margin: 0;
   }
@@ -182,9 +179,9 @@ import Layout from '../layouts/Layout.astro';
 
   .lead {
     font-size: 1rem;
-    color: #8a8e92;
+    color: var(--text-dim);
     line-height: 1.75;
-    border-left: 3px solid #3a3c3e;
+    border-left: 3px solid var(--border);
     padding-left: 1.25rem;
     margin-bottom: 0.5rem;
   }
@@ -192,20 +189,20 @@ import Layout from '../layouts/Layout.astro';
   .legal-content h2 {
     font-size: 1.15rem;
     font-weight: 800;
-    color: #d4d4d4;
+    color: var(--text);
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #2e3032;
+    border-top: 1px solid var(--border);
   }
 
   .legal-content h3 {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #a0a4a8;
+    color: var(--text-2);
   }
 
   .legal-content p {
-    color: #6a6e72;
+    color: var(--text-dim);
     line-height: 1.75;
     font-size: 0.925rem;
   }
@@ -219,7 +216,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .legal-content ul li {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 0.925rem;
     padding-left: 1.25rem;
     position: relative;
@@ -230,15 +227,15 @@ import Layout from '../layouts/Layout.astro';
     content: '—';
     position: absolute;
     left: 0;
-    color: #3a3e42;
+    color: var(--border);
   }
 
   .legal-content a {
-    color: #a0a4a8;
+    color: var(--text-2);
     text-decoration: underline;
-    text-decoration-color: #3a3e42;
+    text-decoration-color: var(--border);
     transition: color 0.2s;
   }
 
-  .legal-content a:hover { color: #c0c0c0; }
+  .legal-content a:hover { color: var(--text-2); }
 </style>

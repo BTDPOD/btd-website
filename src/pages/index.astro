@@ -31,9 +31,9 @@ const recentEpisodes = episodes.slice(1, 4);
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
                   <defs>
                     <linearGradient id="ltChrome" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#c0c0c0"/>
-                      <stop offset="50%" stop-color="#e8e8e8"/>
-                      <stop offset="100%" stop-color="#909090"/>
+                      <stop offset="0%" stop-color="#b4bcb4"/>
+                      <stop offset="50%" stop-color="#e0e0e0"/>
+                      <stop offset="100%" stop-color="#828e82"/>
                     </linearGradient>
                   </defs>
                   <circle cx="50" cy="50" r="48" fill="url(#ltChrome)"/>
@@ -67,9 +67,9 @@ const recentEpisodes = episodes.slice(1, 4);
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
               <defs>
                 <linearGradient id="phLatestChrome" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#c0c0c0"/>
-                  <stop offset="50%" stop-color="#e8e8e8"/>
-                  <stop offset="100%" stop-color="#909090"/>
+                  <stop offset="0%" stop-color="#b4bcb4"/>
+                  <stop offset="50%" stop-color="#e0e0e0"/>
+                  <stop offset="100%" stop-color="#828e82"/>
                 </linearGradient>
               </defs>
               <circle cx="50" cy="50" r="48" fill="url(#phLatestChrome)"/>
@@ -219,7 +219,7 @@ const recentEpisodes = episodes.slice(1, 4);
   }
 
   .view-all {
-    color: #8a8e92;
+    color: var(--text-dim);
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
@@ -230,14 +230,14 @@ const recentEpisodes = episodes.slice(1, 4);
   .view-all:hover { color: var(--accent-light); }
 
   /* Latest section */
-  .latest-section { background: #1a1c1e; }
+  .latest-section { background: var(--bg); }
 
   .latest-card {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 3rem;
-    background: #242628;
-    border: 1px solid #3a3c3e;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
   }
@@ -256,7 +256,7 @@ const recentEpisodes = episodes.slice(1, 4);
   .thumb-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1e2022, #2a2c2e);
+    background: linear-gradient(135deg, var(--bg-alt), var(--surface-2));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,7 +291,7 @@ const recentEpisodes = episodes.slice(1, 4);
 
   .ep-date, .ep-dur {
     font-size: 0.8rem;
-    color: #5a5e62;
+    color: var(--slate-grey);
   }
 
   .latest-title {
@@ -302,7 +302,7 @@ const recentEpisodes = episodes.slice(1, 4);
   }
 
   .latest-desc {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 0.95rem;
     line-height: 1.65;
     margin: 0;
@@ -320,8 +320,8 @@ const recentEpisodes = episodes.slice(1, 4);
     grid-template-columns: auto 1fr;
     gap: 2.5rem;
     align-items: center;
-    background: #1e2022;
-    border: 2px dashed #2e3032;
+    background: var(--bg-alt);
+    border: 2px dashed var(--border);
     border-radius: 16px;
     padding: 3rem;
   }
@@ -333,7 +333,7 @@ const recentEpisodes = episodes.slice(1, 4);
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     font-size: 0.9rem;
     border-radius: 100px;
@@ -360,7 +360,7 @@ const recentEpisodes = episodes.slice(1, 4);
   .btn-ghost {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    color: #6a6e72;
+    color: var(--text-dim);
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
@@ -370,7 +370,7 @@ const recentEpisodes = episodes.slice(1, 4);
   .btn-ghost:hover { color: var(--accent-dim); }
 
   /* Episodes grid */
-  .recent-section { background: #16181a; }
+  .recent-section { background: var(--bg-alt); }
 
   .episodes-grid {
     display: grid;
@@ -385,7 +385,7 @@ const recentEpisodes = episodes.slice(1, 4);
 
   /* Mission section */
   .mission-section {
-    background: linear-gradient(160deg, #1e2022, #16181a);
+    background: linear-gradient(160deg, var(--bg-alt), var(--bg-alt));
     padding: 6rem 1.5rem;
   }
 
@@ -415,25 +415,25 @@ const recentEpisodes = episodes.slice(1, 4);
   .host-avatar {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #c0c0c0, #707070);
+    background: linear-gradient(135deg, var(--text-2), var(--text-dim));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 900;
     font-size: 0.9rem;
-    color: #1a1c1e;
+    color: var(--bg);
     flex-shrink: 0;
   }
 
   .host-name {
     font-weight: 700;
-    color: #c0c0c0;
+    color: var(--text-2);
     font-size: 0.95rem;
   }
 
   .host-role {
-    color: #5a5e62;
+    color: var(--slate-grey);
     font-size: 0.8rem;
   }
 
@@ -446,11 +446,11 @@ const recentEpisodes = episodes.slice(1, 4);
   .mission-title {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #e8e8e8;
+    color: var(--text);
   }
 
   .mission-right p {
-    color: #6a6e72;
+    color: var(--text-dim);
     line-height: 1.7;
     font-size: 0.95rem;
   }

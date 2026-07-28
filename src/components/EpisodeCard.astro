@@ -28,9 +28,9 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
             <defs>
               <linearGradient id={`phChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#c0c0c0"/>
-                <stop offset="50%" stop-color="#e8e8e8"/>
-                <stop offset="100%" stop-color="#909090"/>
+                <stop offset="0%" stop-color="#b4bcb4"/>
+                <stop offset="50%" stop-color="#e0e0e0"/>
+                <stop offset="100%" stop-color="#828e82"/>
               </linearGradient>
             </defs>
             <circle cx="50" cy="50" r="48" fill={`url(#phChrome${index})`}/>
@@ -67,9 +67,9 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
               <defs>
                 <linearGradient id={`epChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#c0c0c0"/>
-                  <stop offset="50%" stop-color="#e8e8e8"/>
-                  <stop offset="100%" stop-color="#909090"/>
+                  <stop offset="0%" stop-color="#b4bcb4"/>
+                  <stop offset="50%" stop-color="#e0e0e0"/>
+                  <stop offset="100%" stop-color="#828e82"/>
                 </linearGradient>
               </defs>
               <circle cx="50" cy="50" r="48" fill={`url(#epChrome${index})`}/>
@@ -101,8 +101,8 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
 
 <style>
   .episode-card {
-    background: #242628;
-    border: 1px solid #3a3c3e;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
@@ -112,13 +112,13 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
 
   .episode-card:hover {
     border-color: var(--accent-border);
-    box-shadow: 0 6px 24px rgba(245, 145, 50, 0.1);
+    box-shadow: 0 6px 24px rgba(170, 174, 142, 0.1);
     transform: translateY(-2px);
   }
 
   .placeholder-card {
     border-style: dashed;
-    border-color: #2e3032;
+    border-color: var(--border);
   }
 
   .card-thumb-link {
@@ -140,7 +140,7 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
 
   .placeholder-thumb {
     aspect-ratio: 2 / 1;
-    background: linear-gradient(135deg, #1e2022, #2a2c2e);
+    background: linear-gradient(135deg, var(--bg-alt), var(--surface-2));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +179,7 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
   .ep-date,
   .ep-dur {
     font-size: 0.75rem;
-    color: #5a5e62;
+    color: var(--slate-grey);
   }
 
   .ep-title {
@@ -198,14 +198,11 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
   }
 
   .chrome-text {
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .ep-desc {
-    color: #7a7e82;
+    color: var(--text-2);
     font-size: 0.85rem;
     line-height: 1.5;
     margin: 0;

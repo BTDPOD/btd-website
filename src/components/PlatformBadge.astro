@@ -78,24 +78,24 @@ const p = platforms[platform];
   }
 
   .size-sm {
-    background: #242628;
-    border: 1px solid #3a3c3e;
-    color: #c0c0c0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-2);
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     font-weight: 600;
   }
 
   .size-sm:hover {
-    border-color: #7a7e82;
-    background: #2e3032;
+    border-color: var(--text-2);
+    background: var(--border);
     transform: translateY(-1px);
   }
 
   .size-lg {
-    background: #1e2022;
-    border: 1px solid #3a3c3e;
-    color: #d4d4d4;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
     padding: 1.25rem 1.5rem;
     font-size: 1rem;
     font-weight: 700;
@@ -106,8 +106,8 @@ const p = platforms[platform];
   }
 
   .size-lg:hover {
-    border-color: #a0a4a8;
-    background: #242628;
+    border-color: var(--text-2);
+    background: var(--surface);
     transform: translateY(-2px);
   }
 
@@ -115,7 +115,7 @@ const p = platforms[platform];
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    color: #c0c0c0;
+    color: var(--text-2);
   }
 
   .size-lg .badge-icon {
@@ -134,7 +134,7 @@ const p = platforms[platform];
 
   .badge-desc {
     font-size: 0.8rem;
-    color: #6a6e72;
+    color: var(--text-dim);
     font-weight: 400;
   }
 </style>

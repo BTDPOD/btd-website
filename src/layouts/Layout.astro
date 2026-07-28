@@ -59,12 +59,33 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
 
 <style is:global>
   :root {
-    --accent: #f59132;
-    --accent-light: #ffc94d;
-    --accent-dim: #d9a955;
-    --accent-soft: rgba(245, 145, 50, 0.12);
-    --accent-border: rgba(245, 145, 50, 0.45);
-    --accent-gradient: linear-gradient(135deg, #f59132 0%, #ffc94d 100%);
+    /* ---- Brand palette ---- */
+    --slate: #3a606e;        /* Blue Slate   */
+    --slate-grey: #607b7d;   /* Slate Grey   */
+    --olive: #828e82;        /* Grey Olive   */
+    --sage: #aaae8e;         /* Dry Sage     */
+    --alabaster: #e0e0e0;    /* Alabaster    */
+
+    /* ---- Surfaces (deep slate, derived from Blue Slate) ---- */
+    --bg: #0f1518;
+    --bg-alt: #141d21;
+    --surface: #1a252b;
+    --surface-2: #202c33;
+    --border: #2a383f;
+    --border-strong: #3a606e;
+
+    /* ---- Text (all pass WCAG AA) ---- */
+    --text: #e0e0e0;         /* 13.9:1 */
+    --text-2: #b4bcb4;       /*  9.6:1 */
+    --text-dim: #828e82;     /*  5.4:1 */
+
+    /* ---- Accent = Dry Sage ---- */
+    --accent: #aaae8e;
+    --accent-light: #c4c7ac;
+    --accent-dim: #828e82;
+    --accent-soft: rgba(170, 174, 142, 0.12);
+    --accent-border: rgba(170, 174, 142, 0.45);
+    --accent-gradient: linear-gradient(135deg, #aaae8e 0%, #c4c7ac 100%);
   }
 
   *, *::before, *::after {
@@ -75,8 +96,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
 
   html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #1a1c1e;
-    color: #e0e2e4;
+    background: var(--bg);
+    color: var(--text);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -86,7 +107,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #1a1c1e;
+    background: var(--bg);
   }
 
   main {
@@ -103,7 +124,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
 
   /* Utility: chrome metallic text */
   .chrome-text {
-    color: #d0d4d8;
+    color: var(--text);
   }
 
   /* Utility: chrome button */
@@ -111,7 +132,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     font-size: 0.9rem;
     border: none;
@@ -149,7 +170,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #1a1c1e; }
-  ::-webkit-scrollbar-thumb { background: #3a3c3e; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #5a5e62; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--slate-grey); }
 </style>

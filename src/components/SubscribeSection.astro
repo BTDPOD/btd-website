@@ -44,10 +44,10 @@ import PlatformBadge from './PlatformBadge.astro';
 
 <style>
   .subscribe-section {
-    background: #16181a;
+    background: var(--bg-alt);
     padding: 6rem 1.5rem;
-    border-top: 1px solid #2e3032;
-    border-bottom: 1px solid #2e3032;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .subscribe-inner {
@@ -68,7 +68,7 @@ import PlatformBadge from './PlatformBadge.astro';
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #8a8e92;
+    color: var(--text-dim);
     margin-bottom: 0.75rem;
   }
 
@@ -79,14 +79,11 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   .chrome-text {
-    background: linear-gradient(135deg, #c0c0c0 0%, #ffffff 20%, #a8a8a8 40%, #e8e8e8 60%, #909090 80%, #d4d4d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
   }
 
   .section-sub {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 1rem;
     margin: 0;
   }
@@ -98,8 +95,8 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   .email-section {
-    background: #1e2022;
-    border: 1px solid #2e3032;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2.5rem;
     text-align: center;
@@ -108,12 +105,12 @@ import PlatformBadge from './PlatformBadge.astro';
   .email-title {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #e8e8e8;
+    color: var(--text);
     margin: 0 0 0.5rem;
   }
 
   .email-sub {
-    color: #6a6e72;
+    color: var(--text-dim);
     font-size: 0.9rem;
     margin: 0 0 1.5rem;
   }
@@ -129,10 +126,10 @@ import PlatformBadge from './PlatformBadge.astro';
 
   .email-input {
     flex: 1;
-    background: #16181a;
-    border: 1px solid #3a3c3e;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    color: #e8e8e8;
+    color: var(--text);
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
     font-family: inherit;
@@ -140,13 +137,13 @@ import PlatformBadge from './PlatformBadge.astro';
     transition: border-color 0.2s;
   }
 
-  .email-input::placeholder { color: #4a4e52; }
-  .email-input:focus { border-color: #7a7e82; }
+  .email-input::placeholder { color: var(--slate-grey); }
+  .email-input:focus { border-color: var(--text-2); }
 
   .btn-chrome {
     padding: 0.75rem 1.5rem;
     background: var(--accent-gradient);
-    color: #1a1c1e;
+    color: var(--bg);
     font-weight: 800;
     font-size: 0.9rem;
     border: none;
