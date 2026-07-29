@@ -35,7 +35,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
     <meta name="twitter:description" content={description} />
 
     <link rel="canonical" href={canonicalUrl.toString()} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Behind the Door Podcast" href="https://feeds.transistor.fm/behind-the-door" />
 
     <!-- Google Fonts: Inter -->
@@ -125,6 +127,13 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
   /* Utility: chrome metallic text */
   .chrome-text {
     color: var(--text);
+  }
+
+  /* BTD logo mark used as a placeholder/decorative image */
+  .btd-mark {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   /* Utility: chrome button */

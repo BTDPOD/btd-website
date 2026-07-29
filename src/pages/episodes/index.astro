@@ -37,20 +37,7 @@ const episodes = await fetchEpisodes();
       ) : (
         <div class="empty-state">
           <div class="empty-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="120" height="120">
-              <defs>
-                <linearGradient id="emptyChrome" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#b4bcb4"/>
-                  <stop offset="50%" stop-color="#e0e0e0"/>
-                  <stop offset="100%" stop-color="#828e82"/>
-                </linearGradient>
-              </defs>
-              <circle cx="50" cy="50" r="48" fill="url(#emptyChrome)"/>
-              <circle cx="50" cy="50" r="44" fill="#111"/>
-              <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                    font-family="Arial Black" font-weight="900" font-size="22"
-                    fill="url(#emptyChrome)" letter-spacing="1">BTD</text>
-            </svg>
+            <img src="/btd-logo.png" alt="Behind the Door" width="120" class="btd-mark" loading="lazy" />
           </div>
           <h2 class="empty-title chrome-text">Episodes Coming Soon</h2>
           <p class="empty-sub">

@@ -25,20 +25,7 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
     ) : (
       <div class="card-thumb placeholder-thumb">
         <div class="thumb-inner">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
-            <defs>
-              <linearGradient id={`phChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#b4bcb4"/>
-                <stop offset="50%" stop-color="#e0e0e0"/>
-                <stop offset="100%" stop-color="#828e82"/>
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="48" fill={`url(#phChrome${index})`}/>
-            <circle cx="50" cy="50" r="44" fill="#111"/>
-            <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                  font-family="Arial Black" font-weight="900" font-size="22"
-                  fill={`url(#phChrome${index})`} letter-spacing="1">BTD</text>
-          </svg>
+          <img src="/btd-logo.png" alt="Behind the Door" width="60" class="btd-mark" loading="lazy" />
         </div>
       </div>
     )}
@@ -64,20 +51,7 @@ const { episode, placeholder = false, index = 0, image, title, label, desc, href
       ) : (
         <div class="card-thumb placeholder-thumb">
           <div class="thumb-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="60" height="60" aria-hidden="true">
-              <defs>
-                <linearGradient id={`epChrome${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#b4bcb4"/>
-                  <stop offset="50%" stop-color="#e0e0e0"/>
-                  <stop offset="100%" stop-color="#828e82"/>
-                </linearGradient>
-              </defs>
-              <circle cx="50" cy="50" r="48" fill={`url(#epChrome${index})`}/>
-              <circle cx="50" cy="50" r="44" fill="#111"/>
-              <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                    font-family="Arial Black" font-weight="900" font-size="22"
-                    fill={`url(#epChrome${index})`} letter-spacing="1">BTD</text>
-            </svg>
+            <img src="/btd-logo.png" alt="Behind the Door" width="60" class="btd-mark" loading="lazy" />
           </div>
         </div>
       )}
