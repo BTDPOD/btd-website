@@ -129,10 +129,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://btdpodca
     color: var(--text);
   }
 
-  /* BTD logo mark used as a placeholder/decorative image */
+  /* BTD logo mark used as a placeholder/decorative image.
+     No percentage max-width: these sit inside shrink-to-fit flex items,
+     where a percentage would create a circular size dependency and
+     collapse the image to 0x0. The width attribute sets the size. */
   .btd-mark {
     height: auto;
-    max-width: 100%;
     object-fit: contain;
   }
 
