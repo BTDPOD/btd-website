@@ -86,7 +86,7 @@ import PlatformBadge from './PlatformBadge.astro';
 
   .platform-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
   }
 
@@ -156,11 +156,11 @@ import PlatformBadge from './PlatformBadge.astro';
   }
 
   @media (max-width: 900px) {
-    .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    .platform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
   @media (max-width: 560px) {
-    .platform-grid { grid-template-columns: 1fr 1fr; }
+    .platform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .form-row { flex-direction: column; }
     .email-section { padding: 1.75rem 1.25rem; }
   }
