@@ -8,6 +8,30 @@ import { fetchEpisodes, formatDate, formatDuration } from '../lib/rss';
 const episodes = await fetchEpisodes();
 const latestEpisode = episodes[0] ?? null;
 const recentEpisodes = episodes.slice(1, 4);
+
+// Episodes recorded but not yet published. These fill the Recent Episodes
+// grid so it never looks empty, and drop off automatically as real episodes
+// publish and take their place.
+const upcoming = [
+  {
+    image: '/episodes/empire-blueprint.jpg',
+    title: 'The Empire Blueprint',
+    desc: "Featuring Ken Goodrich. Subscribe so you don't miss it when it drops.",
+  },
+  {
+    image: '/episodes/technician-to-ceo.jpg',
+    title: 'From Technician to CEO',
+    desc: "Featuring Jason Henderson. Subscribe so you don't miss it when it drops.",
+  },
+  {
+    image: '/episodes/acquisition-game.jpg',
+    title: 'The Acquisition Game',
+    desc: "Featuring Michael Barrett. Subscribe so you don't miss it when it drops.",
+  },
+];
+
+const GRID_SIZE = 3;
+const fillers = upcoming.slice(0, Math.max(0, GRID_SIZE - recentEpisodes.length));
 ---
 
 <Layout>
@@ -68,51 +92,32 @@ const recentEpisodes = episodes.slice(1, 4);
   </section>
 
   <!-- Recent Episodes Grid -->
-  {(recentEpisodes.length > 0 || episodes.length === 0) && (
+  {(recentEpisodes.length > 0 || fillers.length > 0) && (
     <section class="recent-section section-pad">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title chrome-text">Recent Episodes</h2>
+          <h2 class="section-title chrome-text">
+            {recentEpisodes.length > 0 ? 'Recent Episodes' : 'Coming Up'}
+          </h2>
           <div class="chrome-underline"></div>
           <a href="/episodes" class="view-all">View All Episodes &rarr;</a>
         </div>
 
         <div class="episodes-grid">
-          {recentEpisodes.length > 0 ? (
-            recentEpisodes.map((ep, i) => (
-              <EpisodeCard episode={ep} index={i} />
-            ))
-          ) : (
-            <>
-              <EpisodeCard
-                placeholder
-                index={0}
-                image="/episodes/empire-blueprint.jpg"
-                label="Featured"
-                title="The Empire Blueprint"
-                desc="Featuring Ken Goodrich. Subscribe so you don't miss it when it drops."
-                href="/subscribe"
-              />
-              <EpisodeCard
-                placeholder
-                index={1}
-                image="/episodes/technician-to-ceo.jpg"
-                label="Featured"
-                title="From Technician to CEO"
-                desc="Featuring Jason Henderson. Subscribe so you don't miss it when it drops."
-                href="/subscribe"
-              />
-              <EpisodeCard
-                placeholder
-                index={2}
-                image="/episodes/acquisition-game.jpg"
-                label="Featured"
-                title="The Acquisition Game"
-                desc="Featuring Michael Barrett. Subscribe so you don't miss it when it drops."
-                href="/subscribe"
-              />
-            </>
-          )}
+          {recentEpisodes.map((ep, i) => (
+            <EpisodeCard episode={ep} index={i} />
+          ))}
+          {fillers.map((ep, i) => (
+            <EpisodeCard
+              placeholder
+              index={recentEpisodes.length + i}
+              image={ep.image}
+              label="Coming Soon"
+              title={ep.title}
+              desc={ep.desc}
+              href="/subscribe"
+            />
+          ))}
         </div>
 
         <div class="grid-footer">
